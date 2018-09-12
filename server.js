@@ -25,8 +25,10 @@ app.get("/api/hello", function (req, res) {
 });
 
 var timestampHandler = function (req,res){
- console.log(req)
-  res.json({Data: "something"})
+  const input = req.params.date_string
+ console.log(new Date(input))
+  res.json({Data: req.params.date_string})
+  
   
 }
 
