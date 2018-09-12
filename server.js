@@ -26,10 +26,8 @@ app.get("/api/hello", function (req, res) {
 
 var timestampHandler = function (req,res){
   const input = req.params.date_string
- console.log(new Date(input))
-  res.json({Data: req.params.date_string})
-  
-  
+  const date = new Date(input)
+  res.json({unix: date.getTime(), UTC: date.toUTCString()})
 }
 
 app.get('/api/timestamp/:date_string?', timestampHandler)
