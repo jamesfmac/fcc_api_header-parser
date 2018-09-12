@@ -24,6 +24,15 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+var timestampHandler = function (req,res){
+ console.log(req)
+  res.json({Data: "something"})
+  
+}
+
+app.get('/api/timestamp/:date_string?', timestampHandler)
+
+
 
 
 // listen for requests :)
